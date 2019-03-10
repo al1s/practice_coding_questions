@@ -1,0 +1,3 @@
+﻿## Zip lists (two and multiple) to one
+
+Given two lists create a single zipped where all elements of initial lists intermixed in order - list1_elm1, list2_elm1, list1_elm2, list2_elm2 ...     
