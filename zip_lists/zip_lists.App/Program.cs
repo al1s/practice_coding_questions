@@ -43,7 +43,20 @@ namespace zip_lists.App
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            List<List<int>> inputList = new List<List<int>>()
+            {
+                new List<int>(new int[] { 1, 2, 3, 4, 5 }),
+                new List<int>(new int[] { 9, 8, 7, 6 })
+            };
+            Console.WriteLine("Input:");
+            inputList.ForEach(list => {
+                list.ForEach(elm => Console.Write($"{elm}, "));
+                Console.WriteLine();
+            });
+            List<int> result = Zipper<int>.Zip_lists(inputList);
+            Console.WriteLine("Result:");
+            result.ForEach(elm => Console.Write($"{elm}, "));
+            Console.WriteLine();
         }
     }
 }
