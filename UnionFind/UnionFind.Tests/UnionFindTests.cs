@@ -73,13 +73,31 @@ namespace UnionFind.Tests
     }
 
     [Fact]
-    public void GetNumberOfIslans_GivenMapWith1Islan_Returns1()
+    public void GetNumberOfIslands_GivenSquareMapWith1Islan_Returns1()
     {
       //Given
       var map = new int[2][]
       {
           new int[2] {1,0},
           new int[2] {0,1},
+      };
+      var uf = new UnionFind.App.UnionFind(map);
+
+      //When
+      var nOfI = uf.GetNumberOfIslands(map);
+
+      //Then
+      Assert.Equal(2, nOfI);
+    }
+
+    [Fact]
+    public void GetNumberOfIslans_GivenMapWith1Islan_Returns1()
+    {
+      //Given
+      var map = new int[2][]
+      {
+          new int[3] {1,0,1},
+          new int[3] {0,1,1},
       };
       var uf = new UnionFind.App.UnionFind(map);
 

@@ -68,10 +68,29 @@ namespace UnionFind.App
           if (map[r][c] == 1)
           {
             map[r][c] = 0;
-            if (r - 1 > 0 && map[r - 1][c] == 1) uf.Union(r * cols + c, (r - 1) * rows + c); // vertical up
-            if (c - 1 > 0 && map[r][c - 1] == 1) uf.Union(r * cols + c, r * rows + c - 1); // horizontal left
-            if (r + 1 < rows && map[r + 1][c] == 1) uf.Union(r * cols + c, (r + 1) * rows + c); // vertical down
-            if (c + 1 < cols && map[r][c + 1] == 1) uf.Union(r * cols + c, r * rows + c + 1); // horizontal right
+            if (r - 1 > 0 && map[r - 1][c] == 1)
+            {
+              uf.Union(r * cols + c,
+                 (r - 1) * cols + c); // vertical up
+            }
+
+            if (c - 1 > 0 && map[r][c - 1] == 1)
+            {
+              uf.Union(r * cols + c,
+                       r * cols + c - 1); // horizontal left
+            }
+
+            if (r + 1 < rows && map[r + 1][c] == 1)
+            {
+              uf.Union(r * cols + c,
+                 (r + 1) * cols + c); // vertical down
+            }
+
+            if (c + 1 < cols && map[r][c + 1] == 1)
+            {
+              uf.Union(r * cols + c,
+                       r * cols + c + 1); // horizontal right
+            }
           }
         }
       }
